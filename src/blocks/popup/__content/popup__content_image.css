@@ -1,0 +1,31 @@
+.popup__content_image {
+  /*max-width: 80vh;
+  max-height: 80vh;
+  width: 80vh;
+  height: 80vh;
+  background-color: transparent;
+  border-radius: 0px;
+  position: relative;
+  box-sizing: border-box;
+  padding: 0px 0px;
+  background-repeat: no-repeat;
+  background-position-x: center;*/
+
+  max-width: 80vh;
+  width: auto;
+  min-height: auto;
+  max-height: 80vh;
+  background-color: transparent;
+  position: relative;
+  padding: 0px 0px;
+}
+.popupbigimg{
+max-width: 80vh;
+max-height: 80vh;
+}
+
+/*@media screen and (max-width: 540px) {
+.popup__content_image {
+width: calc(100% - 60px);
+}
+}*/

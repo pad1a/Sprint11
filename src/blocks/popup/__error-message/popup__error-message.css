@@ -1,0 +1,33 @@
+/*.popup__error-message {
+    margin: 0;
+    font-size: 12px;
+    line-height: 15px;
+    color: #ff0000;
+    display: block;
+
+}*/
+
+.popup__error-message {
+    color: #FF0000;
+    font-size: 12px;
+    line-height: 15px;
+    transition: .3s;
+    padding: 0px;
+    opacity: 0;
+ /*   min-height: 36px;*/
+    display: block;
+}
+#error-nameplace, #error-username {
+    min-height: 16px;
+    padding: 10px;
+    display: block;
+}
+#error-linkplace, #error-about{
+    min-height: 16px;
+    padding: 10px;
+    display: block;
+}
+
+.input-container__invalid .popup__error-message {
+    opacity: 1;
+}
