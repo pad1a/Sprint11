@@ -1,5 +1,5 @@
 //Класс открытия закрытия попапа.
-class Popup {
+export default class Popup {
     constructor(element, form = null, userinfo = null) {
         this.popupElement = element;
         this.formElement = form;

@@ -1,5 +1,5 @@
 //Класс для хранения и отрисовки карточек.
-class CardList {
+export default class CardList {
     constructor(container, popupimage, createcarditem) {
         this.container = container;
         this.massive = [];
