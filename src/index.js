@@ -13,7 +13,8 @@ const config = {
     headers: {
         authorization: 'd21470e7-5fbe-45dc-9fc0-d7a0f2775604',
         'Content-Type': 'application/json'
-    }
+    },
+    myId: '631b02703b3596e64fc719b8'
 };
 const api = new Api(config);
 const userInfo = new UserInfo(
@@ -25,19 +26,30 @@ const userInfo = new UserInfo(
 userInfo.create();
 api.getUserInfo().then((data) => {
     userInfo.updateUserInfo(data.name, data.about, data.avatar);
+    console.log(data.avatar);
 });
+
+const removeCards = (cardId) => {
+    api.delCards(cardId).then(data => {
+        console.log('delete ', data);
+    });
+};
+
 
 const popupShowImage = new Popup(document.getElementById('bigimage'));
 const popupAdd = new Popup(document.getElementById('newplace'), document.forms.new);
 const popupProfile = new Popup(document.getElementById('profile'), document.forms.profile, userInfo);
+const userId = config.myId;
 const cardlist = new CardList(
     document.querySelector('.places-list'),
     popupShowImage,
-    (name, link, popupimage) => {
-        const cardItem = new Card(name, link, popupimage);
+    (name, link, popupimage, isMyCard, cardId, removeCard) => {
+        const cardItem = new Card(name, link, popupimage, isMyCard, cardId, removeCard);
         cardItem.create();
         return cardItem;
-    });
+    }, userId, removeCards
+    );
+
 
 api.getInitialCards()
     .then((data) => {
@@ -49,8 +61,14 @@ document.forms.new.addEventListener('submit', (event) => {
     const cardItem = new Card(
         document.forms.new.elements.name.value,
         document.forms.new.elements.link.value,
-        popupShowImage
+        popupShowImage,
+        true
     );
+    api.uploadCards(
+        document.forms.new.elements.name.value,
+        document.forms.new.elements.link.value).then((data) => {
+        console.log('data place: ', data);
+    });
     cardItem.create();
     cardlist.addCard(cardItem);
     popupAdd.close();

@@ -1,9 +1,12 @@
 // Класс, создающий карточку
 export default class Card {
-  constructor(name, link, image) {
+  constructor(name, link, image, isMyCard, cardId, removeCard) {
     this.name = name;
     this.link = link;
     this.popupBigImage = image;
+    this.isMyCard = isMyCard;
+    this.cardId = cardId;
+    this.removeCard = removeCard;
   }
 
   setEventListeners(element, event) {
@@ -24,8 +27,8 @@ export default class Card {
     event.preventDefault();
     const tItem = event.target.closest(".place-card");
     const tContainer = event.target.closest(".places-list");
-
     tContainer.removeChild(tItem);
+    this.removeCard(this.cardId);
   }
 
   create() {
@@ -33,8 +36,10 @@ export default class Card {
     const cardContainer = document.createElement('div');
     cardContainer.classList.add('place-card');
     // кнопки
-    const delButtonElement = document.createElement('button');
-    delButtonElement.classList.add('place-card__delete-icon');
+    //if (this.isMyCard) {
+      const delButtonElement = document.createElement('button');
+      delButtonElement.classList.add('place-card__delete-icon');
+    //}
     const likeButtonElement = document.createElement('button');
     likeButtonElement.classList.add('place-card__like-icon');
     // div картинки
@@ -49,7 +54,9 @@ export default class Card {
     const titleBox = document.createElement('div');
     titleBox.classList.add('place-card__description');
     // собираем блок картинки
-    imageLink.appendChild(delButtonElement);
+    if (this.isMyCard){
+      imageLink.appendChild(delButtonElement);
+    }
     // собираем блок тайтла
     titleBox.appendChild(titleElement);
     titleBox.appendChild(likeButtonElement);
