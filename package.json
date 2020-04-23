@@ -1,11 +1,11 @@
 {
   "name": "sprint-11",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "https://pad1a.github.io/Sprint11/",
   "description": "Sprint 11 Ya praktikum",
   "main": "index.js",
   "scripts": {
-    "build": "cross-env NODE_ENV=production rimraf dist && webpack --mode production",
+    "build": "rimraf dist && cross-env NODE_ENV=production webpack --mode production",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --mode development --open --watch",
     "deploy": "cross-env NODE_ENV=production gh-pages -d dist"
   },
