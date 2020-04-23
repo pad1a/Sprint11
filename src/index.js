@@ -6,10 +6,10 @@ import FormValidator from "./scripts/formvalidator.js";
 import Popup from "./scripts/popup.js";
 import UserInfo from "./scripts/userinfo.js";
 
-//const serverUrl = process.env.NODE_ENV === 'development' ? 'http://praktikum.tk' : 'https://praktikum.tk';
+const serverUrl = process.env.NODE_ENV === 'development' ? 'http://praktikum.tk/cohort9' : 'https://praktikum.tk/cohort9';
 const config = {
-    //baseUrl: serverUrl,
-    baseUrl: 'http://95.216.175.5/cohort9',
+    baseUrl: serverUrl,
+    //baseUrl: 'http://95.216.175.5/cohort9',
     headers: {
         authorization: 'd21470e7-5fbe-45dc-9fc0-d7a0f2775604',
         'Content-Type': 'application/json'
