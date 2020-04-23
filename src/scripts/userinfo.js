@@ -1,5 +1,5 @@
 //Класс работы с информацией юзера
-class UserInfo {
+export default class UserInfo {
     constructor(username, userjob, avatar) {
         this.userName = username;
         this.userJob = userjob;

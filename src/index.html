@@ -5,12 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Mesto</title>
-  <link rel="stylesheet" href="./pages/index.css">
 </head>
 <body>
   <div class="root">
     <header class="header root__section">
-      <img src="./images/logo.svg" alt="mesto logo" class="logo">
+      <img src="<%=require('./images/logo.svg').default%>" alt="mesto logo" class="logo">
     </header>
     <div class="profile root__section">
       <div class="user-info">
@@ -27,7 +26,7 @@
     </div>
     <div id="newplace" class="popup">
       <div class="popup__content">
-        <img src="./images/close.svg" alt="" class="popup__close">
+        <img src="<%=require('./images/close.svg').default%>" alt="" class="popup__close">
         <h3 class="popup__title">Новое место</h3>
         <form class="popup__form" name="new">
             <div class="input-container">
@@ -44,7 +43,9 @@
     </div>
     <div id="profile" class="popup">
       <div class="popup__content">
-        <img src="./images/close.svg" alt="" class="popup__close">
+        <img src="<%=require('./images/close.svg').default%>" alt="" class="popup__close">
+
+
         <h3 class="popup__title">Редактировать профиль</h3>
         <form class="popup__form" name="profile">
           <div class="input-container">
@@ -62,19 +63,10 @@
     <div id="bigimage" class="popup">
       <div class="popup__content popup__content_image">
         <img src="" alt="" class="popupbigimg">
-        <img src="./images/close.svg" alt="" class="popup__close">
+        <img src="<%=require('./images/close.svg').default%>" alt="" class="popup__close">
+
       </div>
     </div>
   </div>
-  <script src="./scripts/api.js"></script>
-  <script src="./scripts/card.js"></script>
-  <script src="./scripts/cardlist.js"></script>
-  <script src="./scripts/formvalidator.js"></script>
-  <script src="./scripts/popup.js"></script>
-  <script src="./scripts/userinfo.js"></script>
-
-  <script src="./scripts/script.js"></script>
-  <!--script src="./scripts/test.js"></script-->
-
-</body>
+  </body>
 </html>

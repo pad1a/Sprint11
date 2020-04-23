@@ -1,5 +1,5 @@
 // Класс, создающий карточку
-class Card {
+export default class Card {
   constructor(name, link, image) {
     this.name = name;
     this.link = link;
